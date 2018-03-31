@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from '../components/card/Card';
+import Cards from '../components/Cards';
 
 class App extends Component {
 
@@ -42,9 +42,7 @@ class App extends Component {
   }
 
   render() {
-    const cards = this.state.cards.map((card) => {
-      return <Card title={card.title} description={card.description} clickHandler={this.removeCard.bind(this, card.id)} />
-    })
+    const cards = <Cards cards={this.state.cards} clickHandler={this.removeCard} />
 
     return (
       <div className="App">
